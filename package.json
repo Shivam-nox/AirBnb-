@@ -1,5 +1,8 @@
 {
-  "engines": {
+  
+
+  "engines": 
+  {
     "node": "20.18.0"
   },
   "dependencies": {
@@ -24,6 +27,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
