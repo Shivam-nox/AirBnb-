@@ -130,12 +130,12 @@
 //         res.send("Successfull testing");
 //     });
       
-     sampleListings.forEach(listing => {
-  listing.owner = "67f289a500bf0b84e50cda59";
-  listing.reviews = [];   // 👈 correct
-  let newListing = new Listing(listing);
-  newListing.save();
-});
+//      sampleListings.forEach(listing => {
+//   listing.owner = "67f289a500bf0b84e50cda59";
+//   listing.reviews = [];   // 👈 correct
+//   let newListing = new Listing(listing);
+//   newListing.save();
+// });
 
     //reviews
  
