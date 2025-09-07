@@ -1,9 +1,11 @@
 { 
+    
     if(process.env.NODE_ENV!="production")
     {
      require(`dotenv`).config();
     }
   
+    const { data: sampleListings } = require("./init/data");
 
     const express = require("express");
     const app = express();
@@ -114,19 +116,26 @@
     app.use("/",userRouter);
     
     
- // app.get("/testlisting", async (req, res) => {
-    //     let sampleListing = new Listing({
-    //         title: "My new Villa",
-    //         description: "By the park",
-    //         location: "California,Goa",
-    //         price: 1600,
-    //         country: "India"
-    //     });
+//  app.get("/testlisting", async (req, res) => {
+//         let sampleListing = new Listing({
+//             title: "My new Villa",
+//             description: "By the park",
+//             location: "California,Goa",
+//             price: 1600,
+//             country: "India"
+//         });
 
-    //     await sampleListing.save();
-    //     console.log("Sample was saved");
-    //     res.send("Successfull testing");
-    // });
+//         await sampleListing.save();
+//         console.log("Sample was saved");
+//         res.send("Successfull testing");
+//     });
+      
+     sampleListings.forEach(listing => {
+  listing.owner = "67f289a500bf0b84e50cda59";
+  listing.reviews = [];   // 👈 correct
+  let newListing = new Listing(listing);
+  newListing.save();
+});
 
     //reviews
  
